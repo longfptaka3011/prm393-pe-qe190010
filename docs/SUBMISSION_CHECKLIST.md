@@ -11,7 +11,8 @@
 - [x] Kiểm tra account khác không thấy dữ liệu account trước trên điện thoại thật.
 - [x] Chụp tự động 27 ảnh hệ thống ADB trên điện thoại 2201123C, Android 15; xem `artifacts/phone/manifest.json`.
 - [x] Build và cài bản release; đóng hẳn/mở lại vẫn giữ đăng nhập, 4 recipe, 1 favorite, tổng 97 phút.
-- [ ] Repository GitHub public và URL APK release có thể tải công khai.
+- [x] Repository GitHub public đã có source; APK công khai tại https://github.com/longfptaka3011/prm393-pe-qe190010/releases/download/v1.0.0/app-release.apk.
+- [x] Giải nén bản source mới và build APK thành công với cấu hình Firebase kèm sẵn.
 
 ## Ảnh thật cần chụp, theo thứ tự đề
 
@@ -41,4 +42,4 @@ Mỗi ảnh cần caption đúng tên màn hình/tính năng. Không dùng ảnh
 - Loại bỏ build/, .dart_tool/, .git/, node_modules/, log, khóa admin/service-account và keystore riêng.
 - Giải nén sang thư mục mới và build lại; thử cài APK từ URL public.
 
-Chưa tạo bộ nộp bài cuối: còn cần ảnh console Authentication/Firestore/Rules, URL APK release công khai và xác minh source đã đẩy lên GitHub. Ảnh app thật đã có trong `artifacts/phone/`.
+Source đã đẩy lên GitHub public và APK release có URL công khai đã kiểm tra tải thành công. Bản source giải nén mới build thành công. Ảnh app thật đã có trong `artifacts/phone/`; phần báo cáo đã được dựng và render kiểm tra. Còn chờ 3 ảnh Firebase console do sinh viên chụp để ghép báo cáo cuối.

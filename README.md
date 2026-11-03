@@ -4,6 +4,8 @@
 
 Repository: https://github.com/longfptaka3011/prm393-pe-qe190010
 
+APK release: https://github.com/longfptaka3011/prm393-pe-qe190010/releases/download/v1.0.0/app-release.apk
+
 ## Chạy ngay
 
 ```powershell
@@ -104,6 +106,6 @@ APK debug ở `build/app/outputs/flutter-apk/app-debug.apk`. Bản release hiệ
 
 Đã triển khai các luồng giao diện, tạo Firebase project thật, bật Email/Password và publish Rules. Đã chạy thành công trên điện thoại 2201123C (Android 15), chụp 27 ảnh hệ thống ADB và kiểm tra cách ly tài khoản. APK release đã cài lên điện thoại và kiểm tra sau khi đóng hẳn/mở lại: vẫn đăng nhập, 4 recipe, 1 favorite, tổng 97 phút. Xem ảnh và caption trong `artifacts/phone/README.md`.
 
-Quy trình `node tools/phone_evidence.mjs` tự chọn điện thoại duy nhất đang kết nối, đăng ký tài khoản kiểm thử mới, thao tác và chụp ảnh hệ thống bằng ADB (bao gồm thanh trạng thái). Ảnh lưu ở `artifacts/phone/`, thông tin tài khoản kiểm thử lưu cục bộ ở `.local/phone-test.json` và không đưa lên GitHub. Chỉ dùng ảnh khi quy trình hoàn tất thành công. Chưa có URL APK release công khai hay bộ ảnh console cho báo cáo. Xem `docs/SUBMISSION_CHECKLIST.md` trước khi nộp.
+Quy trình `node tools/phone_evidence.mjs` tự chọn điện thoại duy nhất đang kết nối, đăng ký tài khoản kiểm thử mới, thao tác và chụp ảnh hệ thống bằng ADB (bao gồm thanh trạng thái). Ảnh lưu ở `artifacts/phone/`, thông tin tài khoản kiểm thử lưu cục bộ ở `.local/phone-test.json` và không đưa lên GitHub. Chỉ dùng ảnh khi quy trình hoàn tất thành công. Source đã đẩy lên GitHub public và APK đã đăng trong Release v1.0.0. Source giải nén mới đã build APK thành công với cấu hình Firebase kèm sẵn. Xem `docs/SUBMISSION_CHECKLIST.md` trước khi nộp.
 
 Tài liệu SDK tham khảo: https://firebase.google.com/docs/flutter/setup và https://firebase.google.com/docs/reference/rules/rules.Bytes.

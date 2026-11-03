@@ -8,6 +8,10 @@ const device = JSON.parse(await readFile('artifacts/phone/device.json', 'utf8'))
 const output = 'artifacts/console'; await mkdir(output, {recursive: true});
 function run(args, binary = false) { const r = spawnSync(adb, ['-s',device.serial,...args], {encoding: binary ? null : 'utf8', maxBuffer:24000000, windowsHide:true}); if(r.status!==0)throw Error(r.stderr.toString()); return binary ? r.stdout : r.stdout.trim(); }
 const mode = process.argv[2];
+if(mode !== 'open') {
+  const foreground=run(['shell','dumpsys','activity','activities']);
+  if(!foreground.split(/\r?\n/).some(l=>/(?:mResumedActivity|topResumedActivity)/.test(l)&&l.includes('com.android.chrome')))throw Error('Chrome is not in the foreground; no action was performed.');
+}
 if(mode === 'open') {
   const section = process.argv[3] || 'authentication/users';
   if(!/^[a-zA-Z0-9_/-]+$/.test(section))throw Error('Invalid console section.');
