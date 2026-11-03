@@ -42,4 +42,8 @@ Mỗi ảnh cần caption đúng tên màn hình/tính năng. Không dùng ảnh
 - Loại bỏ build/, .dart_tool/, .git/, node_modules/, log, khóa admin/service-account và keystore riêng.
 - Giải nén sang thư mục mới và build lại; thử cài APK từ URL public.
 
-Source đã đẩy lên GitHub public và APK release có URL công khai đã kiểm tra tải thành công. Bản source giải nén mới build thành công. Ảnh app thật đã có trong `artifacts/phone/`; phần báo cáo đã được dựng và render kiểm tra. Còn chờ 3 ảnh Firebase console do sinh viên chụp để ghép báo cáo cuối.
+Source đã đẩy lên GitHub public và APK release có URL công khai đã kiểm tra tải thành công. Bản source giải nén mới build thành công. Đã ghép đủ 3 ảnh Firebase console thật cùng ảnh ứng dụng vào báo cáo cuối: 31 trang, 30 ảnh có caption, đã render và kiểm tra bố cục từng trang.
+
+- [x] `submission/QE190010/QE190010.docx`: đúng thông tin sinh viên, tài khoản chấm bài, URL GitHub/APK và bằng chứng đầy đủ.
+- [x] `submission/QE190010/QE190010.zip`: xuất trực tiếp từ commit source cuối; không kèm build cache, node_modules, tài khoản cục bộ hay khóa admin.
+- [x] Báo cáo Word và mật khẩu tài khoản chấm bài chỉ lưu cục bộ, không đưa lên repository public.

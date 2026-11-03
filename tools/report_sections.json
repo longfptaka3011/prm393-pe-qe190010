@@ -1,7 +1,7 @@
 [
-  {"heading":"Firebase Authentication","file":"artifacts/console/01_auth_users.png","caption":"Firebase console — Authentication: Users list showing the test account."},
-  {"heading":"Firestore data","file":"artifacts/console/02_firestore_data.png","caption":"Firebase console — Firestore data: recipes collection with documents belonging to the test account."},
-  {"heading":"Published Security Rules","file":"artifacts/console/03_published_rules.png","caption":"Firebase console — Security Rules: the Rules tab showing the rules actually published."},
+  {"heading":"Firebase Authentication","file":"artifacts/console/01_auth_users.jpg","caption":"Firebase console — Authentication: Users list including the grader test account."},
+  {"heading":"Firestore data","file":"artifacts/console/02_firestore_data.png","caption":"Firebase console — Firestore data: recipes collection with four documents belonging to the test account and the saved Avocado Brunch fields.","layout":"landscape"},
+  {"heading":"Published Security Rules","file":"artifacts/console/03_published_rules.png","caption":"Firebase console — Security Rules: the Rules tab showing the rules actually published for RecipeBox QE190010.","layout":"landscape"},
   {"heading":"Register validation","file":"artifacts/phone/04_register_validation.png","caption":"Register screen — validation: empty submission shows the required-field messages."},
   {"heading":"Confirm password validation","file":"artifacts/phone/04b_register_confirm_validation.png","caption":"Register screen — validation: Confirm password is required."},
   {"heading":"Register success","file":"artifacts/phone/05_register_success.png","caption":"Register screen — success: Registration successful after creating a real Firebase account."},

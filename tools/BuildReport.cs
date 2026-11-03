@@ -55,15 +55,20 @@ public class BuildReport {
       Text("RecipeBox is a Flutter Android application using Firebase Email/Password Authentication and Cloud Firestore. Recipes are private to each account. The application supports validated add and edit forms, favorite toggles, deletion with confirmation, combined filters, search and a summary of the displayed recipes.",-1,0);
       Text("The release APK was installed and verified on a physical 2201123C phone running Android 15. After a cold restart, the test account remains signed in with 4 recipes, 1 favorite and a total cooking time of 97 minutes. The application screenshots in this report were captured directly from that phone using ADB.",-1,0);
       Text("Validation: Flutter static analysis passed; 9 unit/widget tests and 6 Firestore Rules tests passed. The complete Firebase workflow also passed on the physical phone.",-1,0);
-      int number=0;
+      int number=0, orientation=0;
       foreach(var item in sections) {
-        sel.InsertBreak(7);
+        int nextOrientation = item.ContainsKey("layout") && item["layout"] == "landscape" ? 1 : 0;
+        if(nextOrientation != orientation) {
+          sel.InsertBreak(2);
+          sel.PageSetup.Orientation = nextOrientation;
+          orientation = nextOrientation;
+        } else { sel.InsertBreak(7); }
         Text((++number).ToString() + " " + item["heading"],-2,0);
         sel.Style = doc.Styles[-1]; sel.ParagraphFormat.Alignment = 1;
         sel.ParagraphFormat.SpaceBefore = 0; sel.ParagraphFormat.SpaceAfter = 6;
         sel.ParagraphFormat.KeepWithNext = -1;
         dynamic picture = sel.InlineShapes.AddPicture(Path.Combine(root,item["file"]),false,true);
-        picture.LockAspectRatio = -1; picture.Width = 259.2f;
+        picture.LockAspectRatio = -1; picture.Width = orientation == 1 ? 712.8f : 259.2f;
         picture.AlternativeText = item["caption"];
         sel.MoveRight(1,1); sel.TypeParagraph();
         sel.ParagraphFormat.KeepWithNext = 0;

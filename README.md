@@ -108,4 +108,6 @@ APK debug ở `build/app/outputs/flutter-apk/app-debug.apk`. Bản release hiệ
 
 Quy trình `node tools/phone_evidence.mjs` tự chọn điện thoại duy nhất đang kết nối, đăng ký tài khoản kiểm thử mới, thao tác và chụp ảnh hệ thống bằng ADB (bao gồm thanh trạng thái). Ảnh lưu ở `artifacts/phone/`, thông tin tài khoản kiểm thử lưu cục bộ ở `.local/phone-test.json` và không đưa lên GitHub. Chỉ dùng ảnh khi quy trình hoàn tất thành công. Source đã đẩy lên GitHub public và APK đã đăng trong Release v1.0.0. Source giải nén mới đã build APK thành công với cấu hình Firebase kèm sẵn. Xem `docs/SUBMISSION_CHECKLIST.md` trước khi nộp.
 
+Bộ nộp cuối nằm cục bộ tại `submission/QE190010/`, gồm `QE190010.docx` (31 trang, 30 ảnh thật có caption) và `QE190010.zip` (source xuất từ commit cuối). Đã bổ sung đủ ảnh Authentication, Firestore Data và Rules trên console. Báo cáo chứa tài khoản chấm bài nên không đưa lên repository public; ảnh, mật khẩu kiểm thử và bản nộp được Git bỏ qua.
+
 Tài liệu SDK tham khảo: https://firebase.google.com/docs/flutter/setup và https://firebase.google.com/docs/reference/rules/rules.Bytes.
