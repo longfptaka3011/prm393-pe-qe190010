@@ -1,0 +1,7 @@
+<resources>
+    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowSplashScreenBackground">#FAF8F3</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/recipebox_icon</item>
+        <item name="android:windowBackground">#FAF8F3</item>
+    </style>
+</resources>

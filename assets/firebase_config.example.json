@@ -1,0 +1,7 @@
+{
+  "apiKey": "YOUR_FIREBASE_ANDROID_API_KEY",
+  "appId": "1:YOUR_SENDER_ID:android:YOUR_APP_ID",
+  "messagingSenderId": "YOUR_SENDER_ID",
+  "projectId": "YOUR_PROJECT_ID",
+  "storageBucket": "YOUR_PROJECT_ID.firebasestorage.app"
+}

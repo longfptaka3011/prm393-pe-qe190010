@@ -1,0 +1,36 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function owned() { return signedIn() && resource.data.userId == request.auth.uid; }
+    function validRecipe(id) {
+      let d = request.resource.data;
+      return d.keys().hasAll(['id', 'userId', 'name', 'category', 'difficulty', 'cookTime', 'favorite', 'notes', 'createdAt'])
+        && d.keys().hasOnly(['id', 'userId', 'name', 'category', 'difficulty', 'cookTime', 'servings', 'favorite', 'notes', 'createdAt'])
+        && d.id == id
+        && d.userId == request.auth.uid
+        && d.name is string && d.name.size() <= 80 && d.name.trim().size() > 0
+        && d.name == d.name.trim()
+        // A single possible document per owner + case-insensitive name.
+        // Hex of UTF-8 is lossless and safe for slash/non-ASCII recipe names.
+        && id == request.auth.uid + '_' + d.name.lower().toUtf8().toHexString().lower()
+        && d.category in ['Breakfast', 'Lunch', 'Dinner', 'Dessert']
+        && d.difficulty in ['Easy', 'Medium', 'Hard']
+        && d.cookTime is int && d.cookTime >= 1 && d.cookTime <= 600
+        && (!('servings' in d) || (d.servings is int && d.servings >= 1 && d.servings <= 20))
+        && d.favorite is bool
+        && d.notes is string && d.notes.size() <= 300
+        && d.createdAt is timestamp;
+    }
+    match /recipes/{id} {
+      // Transactions must be able to read a not-yet-existing target document.
+      allow get: if signedIn() && (resource == null || resource.data.userId == request.auth.uid);
+      allow list: if owned();
+      allow create: if signedIn() && validRecipe(id);
+      allow update: if owned() && validRecipe(id)
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if owned();
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}
